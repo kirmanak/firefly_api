@@ -15,7 +15,7 @@
 pub struct TransactionSplit {
     /// User ID
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
-    pub user: Option<i32>,
+    pub user: Option<String>,
     /// ID of the underlying transaction journal. Each transaction consists of a transaction group (see the top ID) and one or more journals making up the splits of the transaction. 
     #[serde(rename = "transaction_journal_id", skip_serializing_if = "Option::is_none")]
     pub transaction_journal_id: Option<i32>,
