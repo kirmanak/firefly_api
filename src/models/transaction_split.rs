@@ -176,7 +176,7 @@ pub struct TransactionSplit {
 }
 
 impl TransactionSplit {
-    pub fn new(_type: Type, date: String, amount: String, description: String, source_id: Option<i32>, destination_id: Option<i32>) -> TransactionSplit {
+    pub fn new(_type: Type, date: String, amount: String, description: String, source_id: Option<String>, destination_id: Option<String>) -> TransactionSplit {
         TransactionSplit {
             user: None,
             transaction_journal_id: None,
