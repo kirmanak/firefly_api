@@ -19,7 +19,7 @@ pub struct Transaction {
     pub updated_at: Option<String>,
     /// User ID
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
-    pub user: Option<i32>,
+    pub user: Option<String>,
     /// Break if the submitted transaction exists already.
     #[serde(rename = "error_if_duplicate_hash", skip_serializing_if = "Option::is_none")]
     pub error_if_duplicate_hash: Option<bool>,
