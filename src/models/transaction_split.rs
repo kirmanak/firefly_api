@@ -36,7 +36,7 @@ pub struct TransactionSplit {
     pub order: Option<i32>,
     /// Currency ID. Default is the source account's currency, or the user's default currency. Can be used instead of currency_code.
     #[serde(rename = "currency_id", skip_serializing_if = "Option::is_none")]
-    pub currency_id: Option<i32>,
+    pub currency_id: Option<String>,
     /// Currency code. Default is the source account's currency, or the user's default currency. Can be used instead of currency_id.
     #[serde(rename = "currency_code", skip_serializing_if = "Option::is_none")]
     pub currency_code: Option<String>,
@@ -52,7 +52,7 @@ pub struct TransactionSplit {
     pub foreign_amount: Option<String>,
     /// Currency ID of the foreign currency. Default is null. Is required when you submit a foreign amount.
     #[serde(rename = "foreign_currency_id", skip_serializing_if = "Option::is_none")]
-    pub foreign_currency_id: Option<i32>,
+    pub foreign_currency_id: Option<String>,
     /// Currency code of the foreign currency. Default is NULL. Can be used instead of the foreign_currency_id, but this or the ID is required when submitting a foreign amount.
     #[serde(rename = "foreign_currency_code", skip_serializing_if = "Option::is_none")]
     pub foreign_currency_code: Option<String>,
@@ -69,13 +69,13 @@ pub struct TransactionSplit {
     pub budget_name: Option<String>,
     /// The category ID for this transaction.
     #[serde(rename = "category_id", skip_serializing_if = "Option::is_none")]
-    pub category_id: Option<i32>,
+    pub category_id: Option<String>,
     /// The name of the category to be used. If the category is unknown, it will be created. If the ID and the name point to different categories, the ID overrules the name.
     #[serde(rename = "category_name", skip_serializing_if = "Option::is_none")]
     pub category_name: Option<String>,
     /// ID of the source account. For a withdrawal or a transfer, this must always be an asset account. For deposits, this must be a revenue account.
     #[serde(rename = "source_id")]
-    pub source_id: Option<i32>,
+    pub source_id: Option<String>,
     /// Name of the source account. For a withdrawal or a transfer, this must always be an asset account. For deposits, this must be a revenue account. Can be used instead of the source_id. If the transaction is a deposit, the source_name can be filled in freely: the account will be created based on the name.
     #[serde(rename = "source_name", skip_serializing_if = "Option::is_none")]
     pub source_name: Option<String>,
@@ -85,7 +85,7 @@ pub struct TransactionSplit {
     pub source_type: Option<crate::models::AccountTypeProperty>,
     /// ID of the destination account. For a deposit or a transfer, this must always be an asset account. For withdrawals this must be an expense account.
     #[serde(rename = "destination_id")]
-    pub destination_id: Option<i32>,
+    pub destination_id: Option<String>,
     /// Name of the destination account. You can submit the name instead of the ID. For everything except transfers, the account will be auto-generated if unknown, so submitting a name is enough.
     #[serde(rename = "destination_name", skip_serializing_if = "Option::is_none")]
     pub destination_name: Option<String>,
