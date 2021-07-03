@@ -63,7 +63,7 @@ pub struct TransactionSplit {
     pub foreign_currency_decimal_places: Option<i32>,
     /// The budget ID for this transaction.
     #[serde(rename = "budget_id", skip_serializing_if = "Option::is_none")]
-    pub budget_id: Option<i32>,
+    pub budget_id: Option<String>,
     /// The name of the budget to be used. If the budget name is unknown, the ID will be used or the value will be ignored.
     #[serde(rename = "budget_name", skip_serializing_if = "Option::is_none")]
     pub budget_name: Option<String>,
