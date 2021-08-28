@@ -104,7 +104,7 @@ pub struct TransactionSplit {
     pub piggy_bank_name: Option<String>,
     /// Optional. Use either this or the bill_name
     #[serde(rename = "bill_id", skip_serializing_if = "Option::is_none")]
-    pub bill_id: Option<i32>,
+    pub bill_id: Option<String>,
     /// Optional. Use either this or the bill_id
     #[serde(rename = "bill_name", skip_serializing_if = "Option::is_none")]
     pub bill_name: Option<String>,
